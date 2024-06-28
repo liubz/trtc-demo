@@ -25,6 +25,13 @@ mac:
     - NSDocumentsFolderUsageDescription: Application requests access to the user's Documents folder.
     - NSDownloadsFolderUsageDescription: Application requests access to the user's Downloads folder.
   notarize: false
+  extraFiles:
+    [
+      {
+        "from": "node_modules/trtc-electron-sdk/build/mac-framework/${arch}/",
+        "to": "./Frameworks"
+      }
+    ]
 dmg:
   artifactName: ${name}-${version}.${ext}
 linux:

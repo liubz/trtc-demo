@@ -4,9 +4,13 @@ const TRTCCloud = require('trtc-electron-sdk').default;
 // Custom APIs for renderer
 const api = {
   getTRTCShareInstance() {
-    TRTCCloud.getTRTCShareInstance();
+    return TRTCCloud.getTRTCShareInstance();
   }
 }
+
+const trtcCloud = api.getTRTCShareInstance();
+console.log('TRTC SDK version:', trtcCloud.getSDKVersion());
+console.log('process.arch:', process.arch);
 
 // Use `contextBridge` APIs to expose Electron APIs to
 // renderer only if context isolation is enabled, otherwise
